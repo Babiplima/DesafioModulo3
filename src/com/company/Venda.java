@@ -60,7 +60,6 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append(super.toString());
         exibir.append("\n =============================== ");
         exibir.append("\n Vendedor " + vendedores);
         exibir.append("\n Cliente " + clientes);

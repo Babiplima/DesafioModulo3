@@ -1,11 +1,14 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Clientes {
 
     //Atributos
     private String nome;
     private String cpf;
     private String email;
+
 
     //Método construtores
 
@@ -51,7 +54,6 @@ public class Clientes {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append(super.toString());
         exibir.append("\n =============================== ");
         exibir.append("\n Nome " + nome);
         exibir.append(("\n E-mail " + email));
