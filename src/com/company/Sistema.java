@@ -12,7 +12,7 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static void menu(){
+    public static void menu() {
         System.out.println("Bem vindos É do Bem Comidas Saudáveis ");
         System.out.println("Digite 1 - para cadastrar um cliente. ");
         System.out.println("Digite 2 - para cadastrar um vendedor. ");
@@ -23,5 +23,16 @@ public class Sistema {
         System.out.println("Digite 7 - para sair. ");
     }
 
+    //Método cadastrar cliente
 
+    public static Clientes cadastrarClientes() {
+
+        String nome = capturarDados("Digite o nome do cliente: ").nextLine();
+        String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
+        String email = capturarDados("Digite o email do cliente: ").nextLine();
+
+        return ServicoCliente.cadastrarClientes(nome, cpf, email);
+
+
+    }
 }
