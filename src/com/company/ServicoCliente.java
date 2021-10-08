@@ -27,6 +27,5 @@ public class ServicoCliente {
             System.out.println(clientes);
         }
 
-
     }
 }
