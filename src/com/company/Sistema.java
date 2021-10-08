@@ -12,16 +12,6 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static void menu() {
-        System.out.println("Bem vindos É do Bem Comidas Saudáveis ");
-
-        System.out.println("Digite 1 - para registrar uma venda. ");
-        System.out.println("Digite 2 - para listar clientes. ");
-        System.out.println("Digite 3 - para listar vendedores. ");
-        System.out.println("Digite 4 - para apresentar as vendas registradas. ");
-        System.out.println("Digite 5 - para sair. ");
-    }
-
     //Método cadastrar cliente
 
     public static Cliente cadastrarClientes() {
@@ -32,7 +22,6 @@ public class Sistema {
 
         return ServicoCliente.cadastrarClientes(nome, cpf, email);
     }
-
     //Método cadastrar vendedor
 
     public static Vendedor cadastrarVendedores() {
@@ -43,6 +32,27 @@ public class Sistema {
 
         return ServicoVendedor.cadastrarVendedores(nome, cpf, email);
 
+    }
+
+    public static void menu() {
+        System.out.println("Bem vindos É do Bem Comidas Saudáveis ");
+
+        System.out.println("Digite 1 - para registrar uma venda. ");
+        System.out.println("Digite 2 - para listar clientes. ");
+        System.out.println("Digite 3 - para listar vendedores. ");
+        System.out.println("Digite 4 - para apresentar as vendas registradas. ");
+        System.out.println("Digite 5 - para sair. ");
+    }
+
+    public static Venda cadastrarVenda() {
+
+        String emailVendedor = capturarDados("Digite o email do vendedor: ").nextLine();
+        ServicoVendedor.verificarSeOEmailExiste(emailVendedor);
+        String emailCliente = capturarDados("Digite o email cliente: ").nextLine();
+        ServicoCliente.verificarSeOEmailExiste(emailCliente);
+        double valorVenda = capturarDados("Digite o valor da venda ").nextDouble();
+        String dataDeVenda = capturarDados("Digite a data da venda: ").nextLine();
+        return cadastrarVenda();
     }
 
     //Método executar
@@ -56,16 +66,15 @@ public class Sistema {
             int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
             // Cadastrar consumidor
             if (opcaoDoUsuario == 1) {
-           ServicoVenda.cadastrarVenda();
-
+                cadastrarVenda();
             } else if (opcaoDoUsuario == 2) {
                 ServicoCliente.listarClientes();
             } else if (opcaoDoUsuario == 3) {
                 ServicoVendedor.listarVendedores();
             } else if (opcaoDoUsuario == 4) {
-                ServicoVenda.exibirVenda();
-            } else (opcaoDoUsuario == 5) {
-                 continuarMenu = false;
+                ServicoVenda.listarVendas();
+            } else if (opcaoDoUsuario == 5) {
+                continuarMenu = false;
                 System.out.println("Muito obrigada volte sempre. ");
             }
         }

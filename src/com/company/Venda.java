@@ -1,12 +1,15 @@
 package com.company;
 
 public class Venda {
-    protected double valor;
+
 
     //Atributos
 
     Vendedor vendedor;
     Cliente cliente;
+    private double valor;
+    private String data;
+
 
     //Métodos construtores
 
@@ -14,10 +17,11 @@ public class Venda {
     public Venda() {
     }
 
-    public Venda(Vendedor vendedor, Cliente cliente, double valor) {
+    public Venda(Vendedor vendedor, Cliente cliente, double valor,String data) {
         this.vendedor = vendedor;
         this.cliente = cliente;
         this.valor = valor;
+        this.data = data;
     }
 
     //Permissões para manipular atributos Get e Set

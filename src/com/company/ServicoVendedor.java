@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ServicoVendedor {
 
@@ -9,9 +10,15 @@ public class ServicoVendedor {
 
     private static List<Vendedor> vendedores = new ArrayList<>();
 
+    //Método capturar dados
+
+    private static Scanner capturarDados(String mensagem) {
+        System.out.println(mensagem);
+        return new Scanner(System.in);
+    }
+
 
     //Método cadastrar vendedores
-
 
     public static Vendedor cadastrarVendedores(String nome, String cpf, String email) {
 
@@ -29,12 +36,13 @@ public class ServicoVendedor {
             }
         }
 
-        //Método listar
+    }
+    //Método listar
 
-        public static void listarVendedores () {
-            for (Vendedor vendedor : vendedores) {
-                System.out.println(vendedor);
-            }
+    public static void listarVendedores() {
+        for (Vendedor vendedor : vendedores) {
+            System.out.println(vendedor);
         }
+
     }
 }
