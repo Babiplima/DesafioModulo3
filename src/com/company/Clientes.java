@@ -55,7 +55,7 @@ public class Clientes {
         exibir.append("\n =============================== ");
         exibir.append("\n Nome " + nome);
         exibir.append(("\n E-mail " + email));
-        exibir.append(("\n E-mail " + cpf));
+        exibir.append(("\n CPF " + cpf));
         exibir.append("\n =============================== ");
         return exibir.toString();
     }

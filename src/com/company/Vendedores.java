@@ -66,7 +66,7 @@ public class Vendedores {
         exibir.append("\n =============================== ");
         exibir.append("\n Nome " + nome);
         exibir.append(("\n E-mail " + email));
-        exibir.append(("\n E-mail " + cpf));
+        exibir.append(("\n CPF " + cpf));
         exibir.append("\n =============================== ");
         exibir.append("\n Cliente " + clientes);
         return exibir.toString();
