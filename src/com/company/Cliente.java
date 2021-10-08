@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Clientes {
+public class Cliente {
 
     //Atributos
     private String nome;
@@ -13,10 +13,10 @@ public class Clientes {
     //Método construtores
 
 
-    public Clientes() {
+    public Cliente() {
     }
 
-    public Clientes(String nome, String cpf, String email) {
+    public Cliente(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;

@@ -1,13 +1,12 @@
 package com.company;
 
 public class Venda {
+    protected double valor;
 
     //Atributos
 
-    Vendedores vendedores;
-    Clientes clientes;
-    private double valor;
-    private String data;
+    Vendedor vendedor;
+    Cliente cliente;
 
     //Métodos construtores
 
@@ -15,30 +14,29 @@ public class Venda {
     public Venda() {
     }
 
-    public Venda(Vendedores vendedores, Clientes clientes, double valor, String data) {
-        this.vendedores = vendedores;
-        this.clientes = clientes;
+    public Venda(Vendedor vendedor, Cliente cliente, double valor) {
+        this.vendedor = vendedor;
+        this.cliente = cliente;
         this.valor = valor;
-        this.data = data;
     }
 
     //Permissões para manipular atributos Get e Set
 
 
-    public Vendedores getVendedores() {
-        return vendedores;
+    public Vendedor getVendedores() {
+        return vendedor;
     }
 
-    public void setVendedores(Vendedores vendedores) {
-        this.vendedores = vendedores;
+    public void setVendedores(Vendedor vendedor) {
+        this.vendedor = vendedor;
     }
 
-    public Clientes getClientes() {
-        return clientes;
+    public Cliente getClientes() {
+        return cliente;
     }
 
-    public void setClientes(Clientes clientes) {
-        this.clientes = clientes;
+    public void setClientes(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public double getValor() {
@@ -49,22 +47,14 @@ public class Venda {
         this.valor = valor;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
 
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
         exibir.append("\n =============================== ");
-        exibir.append("\n Vendedor " + vendedores);
-        exibir.append("\n Cliente " + clientes);
+        exibir.append("\n Vendedor " + vendedor);
+        exibir.append("\n Cliente " + cliente);
         exibir.append("\n O valor da venda é " + valor);
-        exibir.append("\n A data da venda é " + data);
         exibir.append("\n =============================== ");
         return exibir.toString();
     }

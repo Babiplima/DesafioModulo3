@@ -1,25 +1,24 @@
 package com.company;
 
-public class Vendedores {
+public class Vendedor {
 
     //Atributos
 
     private String nome;
     private String cpf;
     private String email;
-    Clientes clientes;
+
 
     //Métodos construtores
 
 
-    public Vendedores() {
+    public Vendedor() {
     }
 
-    public Vendedores(String nome, String cpf, String email, Clientes clientes) {
+    public Vendedor(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-        this.clientes = clientes;
     }
 
     //Permissões para manipular atributos Get e Set
@@ -49,13 +48,6 @@ public class Vendedores {
         this.email = email;
     }
 
-    public Clientes getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(Clientes clientes) {
-        this.clientes = clientes;
-    }
 
     //Métodos toString
 
@@ -67,7 +59,6 @@ public class Vendedores {
         exibir.append(("\n E-mail " + email));
         exibir.append(("\n CPF " + cpf));
         exibir.append("\n =============================== ");
-        exibir.append("\n Cliente " + clientes);
         return exibir.toString();
     }
 }

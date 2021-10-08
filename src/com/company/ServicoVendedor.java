@@ -3,28 +3,38 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServicoVendedores {
+public class ServicoVendedor {
 
     //Lista para armazenar vendedores
 
-    private static List<Vendedores> vendedores = new ArrayList<>();
+    private static List<Vendedor> vendedores = new ArrayList<>();
 
 
     //Método cadastrar vendedores
 
 
-    public static Clientes cadastrarVendedores(String nome, String cpf, String email) throws Exception {
+    public static Vendedor cadastrarVendedores(String nome, String cpf, String email) {
 
-        Vendedores vendedores = new Vendedores(nome, cpf, email, Clientes);
-        vendedores.add(vendedores);
-        return Vendedores;
+        Vendedor vendedor = new Vendedor(nome, cpf, email);
+        vendedores.add(vendedor);
+        return vendedor;
     }
+    // verificar se o email existe (Percorrer a lista)
 
-    //Método listar
+    public static void verificarSeOEmailExiste(String email) {
+        for (Vendedor vendedorReferencia : vendedores) {
+            if (vendedorReferencia.getEmail().equals(email)) ;
+            else {
+                System.out.println("E-mail não cadastrado ");
+            }
+        }
 
-    public static void listarVendedores() {
-        for (Vendedores vendedores : vendedores) {
-            System.out.println(vendedores);
+        //Método listar
+
+        public static void listarVendedores () {
+            for (Vendedor vendedor : vendedores) {
+                System.out.println(vendedor);
+            }
         }
     }
 }
