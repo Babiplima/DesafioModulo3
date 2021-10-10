@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class ServicoVendedor {
 
+
     //Lista para armazenar vendedores
 
     private static List<Vendedor> vendedores = new ArrayList<>();
@@ -44,17 +45,5 @@ public class ServicoVendedor {
             System.out.println(vendedor);
         }
 
-        // verificar se o email existe (Percorrer a lista)
-
-        public static Vendedor verificarSeOEmailExisteVendedor(String email) throws Exception {
-            for (Vendedor vendedorReferencia : vendedores) {
-                if (vendedorReferencia.getCpf().equals(email)) {
-                    return vendedorReferencia;
-                }
-            }
-            throw new Exception("\n Email não cadastrado");
-
-
-        }
-    }
+   }
 }
