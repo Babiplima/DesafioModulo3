@@ -11,6 +11,7 @@ public class ServicoVendedor {
     private static List<Vendedor> vendedores = new ArrayList<>();
 
 
+  //Método verificar cpf vendedor
 
     public static void verificarCpfVendedor(String cpf) throws Exception {
         for (Vendedor referencia : vendedores) {
@@ -19,6 +20,7 @@ public class ServicoVendedor {
             }
         }
     }
+    //Método verificar email vendedor
 
     public static void verificarEmailVendedor(String email) throws Exception {
         for (Vendedor referencia : vendedores) {
