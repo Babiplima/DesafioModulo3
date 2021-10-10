@@ -45,7 +45,7 @@ public class ServicoCliente {
                 return clienteReferencia;
             }
         }
-        throw new Exception("CPF não cadastrado");
+        throw new Exception("\n CPF não cadastrado");
     }
 
 

@@ -22,6 +22,14 @@ public class Sistema {
 
         return ServicoCliente.cadastrarClientes(nome, cpf, email);
     }
+
+    //Método verificar se o email existe (Percorrer a lista)
+
+    public static Cliente verificarSeOCPFExiste() throws Exception{
+        String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
+
+        return ServicoCliente.verificarSeOCPFExiste(cpfBusca);
+    }
     //Método cadastrar vendedor
 
     public static Vendedor cadastrarVendedores() {
