@@ -54,7 +54,7 @@ public class Vendedor {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("\n =============================== ");
+        exibir.append("\n ====================== ");
         exibir.append("\n Nome " + nome);
         exibir.append(("\n E-mail " + email));
         exibir.append(("\n CPF " + cpf));

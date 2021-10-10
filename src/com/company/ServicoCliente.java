@@ -28,21 +28,27 @@ public class ServicoCliente {
         return cliente;
     }
 
+    //Método exiba lista
+
+    public static List<Cliente> exibirClientesCadastrados(){
+        for (Cliente referencia:clientes){
+            System.out.println(referencia);
+        }
+
+        return clientes;
+    }
     // verificar se o email existe (Percorrer a lista)
 
-    public static void verificarSeOEmailExiste(String email)  {
+    public static Cliente verificarSeOCPFExiste(String cpf) throws Exception{
         for (Cliente clienteReferencia : clientes) {
-            if (clienteReferencia.getEmail().equals(email));
-            else {
-                System.out.println("E-mail não cadastrado ");
-           }
+            if (clienteReferencia.getCpf().equals(cpf)) {
+                return clienteReferencia;
+            }
         }
+        throw new Exception("CPF não cadastrado");
     }
-    //Método listar
 
-    public static void listarClientes() {
-        for (Cliente cliente : clientes) {
-            System.out.println(cliente);
-        }
-    }
+
 }
+
+

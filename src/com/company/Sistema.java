@@ -7,7 +7,7 @@ public class Sistema {
 
     //Método capturar dados
 
-    private static Scanner capturarDados(String mensagem) {
+    public static Scanner capturarDados(String mensagem) {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
@@ -44,42 +44,43 @@ public class Sistema {
         System.out.println("Digite 5 - para sair. ");
     }
 
-    public static Venda cadastrarVenda() {
+    public static Venda cadastrarVenda() throws Exception {
 
         String emailVendedor = capturarDados("Digite o email do vendedor: ").nextLine();
         ServicoVendedor.verificarSeOEmailExiste(emailVendedor);
-        String emailCliente = capturarDados("Digite o email cliente: ").nextLine();
-        ServicoCliente.verificarSeOEmailExiste(emailCliente);
+        String cpfCliente = capturarDados("Digite o cpf do cliente: ").nextLine();
         double valorVenda = capturarDados("Digite o valor da venda ").nextDouble();
         String dataDeVenda = capturarDados("Digite a data da venda: ").nextLine();
-        return cadastrarVenda();
+        return ServicoVenda.cadastrarVenda(vendedor, cliente, valor, data);
     }
 
     //Método executar
 
-    public static boolean executar() {
+    public static void executar()throws Exception {
 
         boolean continuarMenu = true;
 
         while (continuarMenu) {
             menu();
             int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
-            // Cadastrar consumidor
             if (opcaoDoUsuario == 1) {
-                cadastrarVenda();
+                Venda venda = cadastrarVenda();
+                System.out.println(venda);
             } else if (opcaoDoUsuario == 2) {
-                ServicoCliente.listarClientes();
+                ServicoCliente.exibirClientesCadastrados();
             } else if (opcaoDoUsuario == 3) {
                 ServicoVendedor.listarVendedores();
             } else if (opcaoDoUsuario == 4) {
                 ServicoVenda.listarVendas();
             } else if (opcaoDoUsuario == 5) {
-                continuarMenu = false;
                 System.out.println("Muito obrigada volte sempre. ");
+                continuarMenu = false;
             }
+
         }
-        return continuarMenu;
+
     }
 }
+
 
 

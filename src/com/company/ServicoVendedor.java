@@ -21,14 +21,14 @@ public class ServicoVendedor {
     //Método cadastrar vendedores
 
     public static Vendedor cadastrarVendedores(String nome, String cpf, String email) {
-
-        Vendedor vendedor = new Vendedor(nome, cpf, email);
+        Vendedor vendedor = ServicoVendedor.verificarSeOEmailExiste(email);
+        Vendedor vendedor1 = new Vendedor(nome,cpf,email);
         vendedores.add(vendedor);
-        return vendedor;
+        return vendedor1;
     }
     // verificar se o email existe (Percorrer a lista)
 
-    public static void verificarSeOEmailExiste(String email) {
+    public static Vendedor verificarSeOEmailExiste(String email) {
         for (Vendedor vendedorReferencia : vendedores) {
             if (vendedorReferencia.getEmail().equals(email)) ;
             else {
@@ -36,6 +36,7 @@ public class ServicoVendedor {
             }
         }
 
+        return null;
     }
     //Método listar
 

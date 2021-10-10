@@ -5,8 +5,8 @@ public class Venda {
 
     //Atributos
 
-    Vendedor vendedor;
-    Cliente cliente;
+    private Vendedor vendedor;
+    private Cliente cliente;
     private double valor;
     private String data;
 
@@ -55,11 +55,12 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("\n =============================== ");
-        exibir.append("\n Vendedor " + vendedor);
-        exibir.append("\n Cliente " + cliente);
-        exibir.append("\n O valor da venda é " + valor);
-        exibir.append("\n =============================== ");
+        exibir.append("\n ============Dados de venda================ ");
+        exibir.append(getClientes());
+        exibir.append(getVendedores());
+        exibir.append("\n Valor a ser pago " + valor);
+        exibir.append("\n Data " + data);
+        exibir.append("\n ==========================================");
         return exibir.toString();
     }
 }

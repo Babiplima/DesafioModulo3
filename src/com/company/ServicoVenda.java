@@ -10,8 +10,8 @@ public class ServicoVenda {
 
     //Método cadastrar venda
 
-    public static Venda cadastrarVenda(Vendedor vendedor, Cliente cliente, double valor, String data) {
-
+    public static Venda cadastrarVenda(Vendedor vendedor, String cpf, double valor, String data)throws Exception {
+       Cliente cliente = ServicoCliente.verificarSeOCPFExiste(cpf);
         Venda venda = new Venda(vendedor, cliente, valor, data);
         vendas.add(venda);
         return venda;
@@ -25,6 +25,7 @@ public class ServicoVenda {
             System.out.println(venda);
         }
     }
+
 }
 
 
