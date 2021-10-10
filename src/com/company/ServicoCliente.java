@@ -39,7 +39,7 @@ public class ServicoCliente {
     }
     // verificar se o email existe (Percorrer a lista)
 
-    public static Cliente verificarSeOCPFExiste(String cpf) throws Exception{
+    public static Cliente verificarSeOCPFExisteCliente(String cpf) throws Exception{
         for (Cliente clienteReferencia : clientes) {
             if (clienteReferencia.getCpf().equals(cpf)) {
                 return clienteReferencia;

@@ -25,10 +25,10 @@ public class Sistema {
 
     //Método verificar se o email existe (Percorrer a lista)
 
-    public static Cliente verificarSeOCPFExiste() throws Exception{
+    public static Cliente verificarSeOCPFExisteCLiente() throws Exception {
         String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
 
-        return ServicoCliente.verificarSeOCPFExiste(cpfBusca);
+        return ServicoCliente.verificarSeOCPFExisteCliente(cpfBusca);
     }
     //Método cadastrar vendedor
 
@@ -40,6 +40,12 @@ public class Sistema {
 
         return ServicoVendedor.cadastrarVendedores(nome, cpf, email);
 
+    }
+
+    public static Vendedor verificarSeOCPFExisteVendedor() throws Exception {
+        String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
+
+        return ServicoVendedor.verificarSeOCPFExisteVendedor(cpfBusca);
     }
 
     public static void menu() {
@@ -64,7 +70,7 @@ public class Sistema {
 
     //Método executar
 
-    public static void executar()throws Exception {
+    public static void executar() throws Exception {
 
         boolean continuarMenu = true;
 
