@@ -17,7 +17,7 @@ public class Venda {
     public Venda() {
     }
 
-    public Venda(Vendedor vendedor, Cliente cliente, double valor,String data) {
+    public Venda(Vendedor vendedor, Cliente cliente, double valor, String data) {
         this.vendedor = vendedor;
         this.cliente = cliente;
         this.valor = valor;
@@ -55,12 +55,17 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("\n ============Dados de venda================ ");
+        exibir.append("========Venda========");
         exibir.append(getClientes());
+        exibir.append("========Venda========\n");
+        exibir.append(getClientes() + "\n");
         exibir.append(getVendedores());
-        exibir.append("\n Valor a ser pago " + valor);
-        exibir.append("\n Data " + data);
-        exibir.append("\n ==========================================");
+        exibir.append("\n====Dados=da=Venda===");
+        exibir.append("\nValor: " + valor);
+        exibir.append("\nData: " + data);
+        exibir.append("\nValor: R$" + valor);
+        exibir.append("\nData registro: " + data);
+        exibir.append("\n=====================");
         return exibir.toString();
     }
 }

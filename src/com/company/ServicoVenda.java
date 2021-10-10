@@ -1,5 +1,6 @@
 package com.company;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,23 +11,53 @@ public class ServicoVenda {
 
     //Método cadastrar venda
 
-    public static Venda cadastrarVenda(Cliente cliente, Vendedor vendedor, double valor, String data) throws Exception {
-        Venda venda = new Venda(vendedor, cliente, valor, data);
-        vendas.add(venda);
+
+    private  static List<Venda> registroVendas = new ArrayList<>();
+
+    public static Venda registrarVenda(Cliente cliente,Vendedor vendedor, double valorASerPago, String dataRegistro){
+        Venda venda = new Venda(vendedor, cliente,valorASerPago,dataRegistro);
+        registroVendas.add(venda);
+
         return venda;
     }
 
+    //Método exiba lista
 
-    //Método listar
-
-    public static List<Venda> listarVendas() {
-        for (Venda venda : vendas) {
-            System.out.println(venda);
+    public static List<Venda> exibirVendaCadastradas() {
+        for (Venda referencia : registroVendas) {
+            System.out.println(referencia);
         }
-        return vendas;
+        return registroVendas;
     }
+ //   public static List<Venda> comprasPorCliente(Cliente cliente){
+   //     List<Venda> comprasCliente = new ArrayList<>();
+
+     //   for (Venda referencia:registroVendas){
+       //     if (referencia.getClientes().equals(cliente)){
+         //       comprasCliente.add(referencia);
+           //     System.out.println(referencia);
+            //}
+        //}
+
+        //return comprasCliente;
+    //}
+
+    //public static List<Venda> vendasPorVendedor(Vendedor vendedor){
+      //  List<Venda> vendasVendedor = new ArrayList<>();
+
+        //for (Venda referencia:registroVendas){
+          //  if (referencia.getVendedores().equals(vendedor)){
+            //    vendasVendedor.add(referencia);
+              //  System.out.println(referencia);
+            //}
+        //}
+
+        //return vendasVendedor;
+    //}
 
 }
+
+
 
 
 

@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ServicoVendedor {
 
@@ -11,39 +10,51 @@ public class ServicoVendedor {
 
     private static List<Vendedor> vendedores = new ArrayList<>();
 
-    //Método capturar dados
 
-    private static Scanner capturarDados(String mensagem) {
-        System.out.println(mensagem);
-        return new Scanner(System.in);
+
+    public static void verificarCpfVendedor(String cpf) throws Exception {
+        for (Vendedor referencia : vendedores) {
+            if (referencia.getCpf().equals(cpf)) {
+                throw new Exception("CPF já cadastrado!");
+            }
+        }
+    }
+
+    public static void verificarEmailVendedor(String email) throws Exception {
+        for (Vendedor referencia : vendedores) {
+            if (referencia.getEmail().equalsIgnoreCase(email)) {
+                throw new Exception("Email já cadastrado!");
+            }
+        }
     }
 
     //Método cadastrar vendedores
 
     public static Vendedor cadastrarVendedores(String nome, String cpf, String email) {
-        Vendedor vendedor = ServicoVendedor.verificarSeOEmailExiste(email);
-        Vendedor vendedor1 = new Vendedor(nome, cpf, email);
+        Vendedor vendedor = new Vendedor(nome, cpf, email);
         vendedores.add(vendedor);
-        return vendedor1;
+        return vendedor;
     }
-    // verificar se o email existe (Percorrer a lista)
 
-    public static Vendedor verificarSeOEmailExiste(String email) {
-        for (Vendedor vendedorReferencia : vendedores) {
-            if (vendedorReferencia.getEmail().equals(email)) ;
-            else {
-                System.out.println("E-mail não cadastrado ");
+    //Método exiba lista
+
+    public static List<Vendedor> exibirVendedorCadastrados() {
+        for (Vendedor referencia : vendedores) {
+            System.out.println(referencia);
+        }
+
+        return vendedores;
+
+    }
+
+    public static Vendedor buscarVendedor(String emailBusca) throws Exception {
+        for (Vendedor referencia : vendedores) {
+                if (referencia.getEmail().equalsIgnoreCase(emailBusca)) {
+                    return referencia;
+                }
             }
+            throw new Exception("\nVendedor não encontrado!");
         }
-
-        return null;
     }
-    //Método listar
 
-    public static void listarVendedores() {
-        for (Vendedor vendedor : vendedores) {
-            System.out.println(vendedor);
-        }
 
-   }
-}

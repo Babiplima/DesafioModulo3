@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ServicoCliente {
 
@@ -10,13 +9,32 @@ public class ServicoCliente {
 
     private static List<Cliente> clientes = new ArrayList<>();
 
-    //Método capturar dados
 
-    private static Scanner capturarDados(String mensagem) {
-        System.out.println(mensagem);
-        return new Scanner(System.in);
+    //Método para validar email
+
+    public static void validarEmail(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Email digitado inválido!");
+        }
     }
+    //Método para verificar cpf
 
+    public static void verificarCpfCliente(String cpf) throws Exception {
+        for (Cliente referencia : clientes) {
+            if (referencia.getCpf().equals(cpf)) {
+                throw new Exception("Cpf já cadastrado!");
+            }
+        }
+    }
+    //Método para verificar cpf
+
+    public static void verificarEmailCliente(String email) throws Exception {
+        for (Cliente referencia : clientes) {
+            if (referencia.getEmail().equalsIgnoreCase(email)) {
+                throw new Exception("Email já cadastrado!");
+            }
+        }
+    }
 
     //Método cadastrar cliente
 
@@ -28,26 +46,24 @@ public class ServicoCliente {
         return cliente;
     }
 
+
     //Método exiba lista
 
-    public static List<Cliente> exibirClientesCadastrados(){
-        for (Cliente referencia:clientes){
+    public static List<Cliente> exibirClientesCadastrados() {
+        for (Cliente referencia : clientes) {
             System.out.println(referencia);
         }
 
         return clientes;
     }
-    // verificar se o cpf existe (Percorrer a lista)
-
-    public static Cliente verificarSeOCPFExisteCliente(String cpf) throws Exception{
-        for (Cliente clienteReferencia : clientes) {
-            if (clienteReferencia.getCpf().equals(cpf)) {
-                return clienteReferencia;
+    public static Cliente buscarCliente(String cpfBusca) throws Exception{
+        for (Cliente referencia:clientes){
+            if(referencia.getCpf().equals(cpfBusca)){
+                return referencia;
             }
         }
-        throw new Exception("\n CPF não cadastrado");
+        throw new Exception("\nCliente não encontrado!");
     }
-
 
 }
 

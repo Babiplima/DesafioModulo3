@@ -5,14 +5,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-
             boolean executarSistema = true;
 
-            while (executarSistema) {
+            while (executarSistema){
 
                 try {
                     executarSistema = Sistema.executar();
-                } catch (Exception erro) {
+                }catch (Exception erro){
                     System.out.println(erro.getMessage());
                 }
             }
