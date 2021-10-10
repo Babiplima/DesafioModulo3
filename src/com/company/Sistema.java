@@ -42,10 +42,10 @@ public class Sistema {
 
     }
 
-    public static Vendedor verificarSeOCPFExisteVendedor() throws Exception {
-        String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
+    public static Vendedor verificarSeOEmailExisteVendedor() throws Exception {
+        String emailBusca = capturarDados("\nDigite o emil do vendedor que deseja buscar: ").nextLine();
 
-        return ServicoVendedor.verificarSeOCPFExisteVendedor(cpfBusca);
+        return ServicoVendedor.verificarSeOEmailExisteVendedor;
     }
 
     public static void menu() {
@@ -54,19 +54,23 @@ public class Sistema {
         System.out.println("Digite 1 - para registrar uma venda. ");
         System.out.println("Digite 2 - para listar clientes. ");
         System.out.println("Digite 3 - para listar vendedores. ");
-        System.out.println("Digite 4 - para apresentar as vendas registradas. ");
+        System.out.println("Digite 4 - para apresentar todos os cadastros. ");
         System.out.println("Digite 5 - para sair. ");
     }
 
+    //Método cadastrar venda
+
     public static Venda cadastrarVenda() throws Exception {
 
-        String emailVendedor = capturarDados("Digite o email do vendedor: ").nextLine();
-        ServicoVendedor.verificarSeOEmailExiste(emailVendedor);
-        String cpfCliente = capturarDados("Digite o cpf do cliente: ").nextLine();
-        double valorVenda = capturarDados("Digite o valor da venda ").nextDouble();
-        String dataDeVenda = capturarDados("Digite a data da venda: ").nextLine();
-        return ServicoVenda.cadastrarVenda(vendedor, cliente, valor, data);
+        Cliente cliente = Sistema.verificarSeOCPFExisteCLiente();
+        Vendedor vendedor = Sistema.verificarSeOEmailExisteVendedor();
+        double valor = capturarDados("Por favor, digite o valor da venda ").nextDouble();
+        String data = capturarDados("Por favor, digite a data da venda ").nextLine();
+        return ServicoVenda.cadastrarVenda(cliente,vendedor,valor,data);
+
+
     }
+
 
     //Método executar
 

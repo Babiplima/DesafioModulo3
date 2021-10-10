@@ -37,7 +37,7 @@ public class ServicoCliente {
 
         return clientes;
     }
-    // verificar se o email existe (Percorrer a lista)
+    // verificar se o cpf existe (Percorrer a lista)
 
     public static Cliente verificarSeOCPFExisteCliente(String cpf) throws Exception{
         for (Cliente clienteReferencia : clientes) {

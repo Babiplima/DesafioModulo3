@@ -17,12 +17,11 @@ public class ServicoVendedor {
         return new Scanner(System.in);
     }
 
-
     //Método cadastrar vendedores
 
     public static Vendedor cadastrarVendedores(String nome, String cpf, String email) {
         Vendedor vendedor = ServicoVendedor.verificarSeOEmailExiste(email);
-        Vendedor vendedor1 = new Vendedor(nome,cpf,email);
+        Vendedor vendedor1 = new Vendedor(nome, cpf, email);
         vendedores.add(vendedor);
         return vendedor1;
     }
@@ -45,5 +44,17 @@ public class ServicoVendedor {
             System.out.println(vendedor);
         }
 
+        // verificar se o email existe (Percorrer a lista)
+
+        public static Vendedor verificarSeOEmailExisteVendedor(String email) throws Exception {
+            for (Vendedor vendedorReferencia : vendedores) {
+                if (vendedorReferencia.getCpf().equals(email)) {
+                    return vendedorReferencia;
+                }
+            }
+            throw new Exception("\n Email não cadastrado");
+
+
+        }
     }
 }
