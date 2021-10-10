@@ -5,16 +5,11 @@ import java.util.SortedMap;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        Sistema.cadastrarClientes();
-        Sistema.cadastrarClientes();
-        ServicoCliente.exibirClientesCadastrados();
-        Sistema.cadastrarClientes();
-        ServicoCliente.exibirClientesCadastrados();
+
         try {
+            Sistema.cadastrarVendedores();
             Sistema.cadastrarClientes();
-            Sistema.cadastrarClientes();
-            ServicoCliente.exibirClientesCadastrados();
-            System.out.println(Sistema.verificarSeOCPFExiste());
+            System.out.println(Sistema.cadastrarVenda());
         } catch (Exception erro) {
             System.out.println(erro.getMessage());
 
