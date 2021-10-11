@@ -16,7 +16,7 @@ public class ServicoVendedor {
     public static void verificarCpfVendedor(String cpf) throws Exception {
         for (Vendedor referencia : vendedores) {
             if (referencia.getCpf().equals(cpf)) {
-                throw new Exception("CPF já cadastrado!");
+                throw new Exception("\nCPF já cadastrado!");
             }
         }
     }

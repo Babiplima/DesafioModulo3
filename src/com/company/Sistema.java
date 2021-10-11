@@ -12,6 +12,7 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+    //Menu Mostrar Cadastros
 
     public static void menuCadastro() {
         System.out.println("Bem vindos É do Bem Comidas Saudáveis ");
@@ -21,7 +22,7 @@ public class Sistema {
         System.out.println("Digite 4 para mostrar cadastros");
         System.out.println("Digite 5 para sair ");
     }
-    //Método menu Mostrar Cadastros
+    //Menu Mostrar Cadastros
 
     public static void menuMostrarCadastrados() {
         System.out.println(" Neste menu você pode consultar todas as operações deste sistema ");

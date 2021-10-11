@@ -14,7 +14,7 @@ public class ServicoCliente {
 
     public static void validarEmail(String email) throws Exception {
         if (!email.contains("@")) {
-            throw new Exception("Email digitado inválido!");
+            throw new Exception("\nEmail digitado inválido!");
         }
     }
     //Método para verificar cpf
@@ -26,7 +26,7 @@ public class ServicoCliente {
             }
         }
     }
-    //Método para verificar cpf
+    //Método para verificar email
 
     public static void verificarEmailCliente(String email) throws Exception {
         for (Cliente referencia : clientes) {
